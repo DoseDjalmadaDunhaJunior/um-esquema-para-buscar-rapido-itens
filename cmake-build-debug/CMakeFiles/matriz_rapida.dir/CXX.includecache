@@ -7,12 +7,20 @@
 #IncludeRegexTransform: 
 
 /Volumes/HD_EXTERNO/paradas_de_algoritmo/brincadeiras_2019/matriz_rapida/Hash.hpp
-iostream
--
+StringChar.hpp
+/Volumes/HD_EXTERNO/paradas_de_algoritmo/brincadeiras_2019/matriz_rapida/StringChar.hpp
 math.h
+-
+
+/Volumes/HD_EXTERNO/paradas_de_algoritmo/brincadeiras_2019/matriz_rapida/StringChar.hpp
+iostream
 -
 
 /Volumes/HD_EXTERNO/paradas_de_algoritmo/brincadeiras_2019/matriz_rapida/main.cpp
 Hash.hpp
 /Volumes/HD_EXTERNO/paradas_de_algoritmo/brincadeiras_2019/matriz_rapida/Hash.hpp
+StringChar.hpp
+/Volumes/HD_EXTERNO/paradas_de_algoritmo/brincadeiras_2019/matriz_rapida/StringChar.hpp
+exception
+-
 

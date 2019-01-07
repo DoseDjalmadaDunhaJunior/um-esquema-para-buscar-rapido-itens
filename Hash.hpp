@@ -4,23 +4,34 @@
 
 #ifndef MATRIZ_RAPIDA_HASH_HPP
 #define MATRIZ_RAPIDA_HASH_HPP
-#include <iostream>
+#include "StringChar.hpp"
 #include <math.h>
-using namespace std;
 
 class Hash {
 public:
     void insere(int n){
-        int aux, aux2 = (digitos(n) - 1);
-        aux = pow(10,aux2);
-        vet[aux2][(n/aux)] = n;
+        int aux, aux2;
+        StringChar oi;
+        string temp = oi.converte(n);
+        char* arr = oi.converte(temp);
+        int size = static_cast<int>(temp.size() - 1);
+        aux2 = arr[size];
+        if(size == 0){
+            vet[0][n] = n;
+        }
+        else{
+            int pri,seg;
+            linhaColuna(n,&pri,&seg);
+            vet[pri][seg] = n;
+        }
     }
 
     int busca(int n){
-        int aux, aux2 = (digitos(n) - 1);
-        aux = pow(10,aux2);
-        if(vet[aux2][(n/aux)] == n){
-            return vet[aux2][(n/aux)];
+        int pri,seg;
+        linhaColuna(n,&pri,&seg);
+        if(vet[pri][seg] == n){
+            int ver = vet[pri][seg];
+            return vet[pri][seg];
         }
         else{
             puts("numero nao encontrado");
@@ -41,6 +52,21 @@ private:
                 valor = valor / 10;
             }
         return contaDigitos;
+    }
+
+    void linhaColuna(int n,int* lin, int* col){
+        int pri,seg;
+        StringChar oi;
+        string temp = oi.converte(n);
+        char* arr = oi.converte(temp);
+        char* morre = arr;
+        int size = static_cast<int>(temp.size() - 1);
+        seg = oi.converte(morre[size]);
+        morre[size] = '\n';
+        string str = oi.converte(morre);
+        pri = stoi(str);
+        *lin = pri;
+        *col = seg;
     }
 
 };
